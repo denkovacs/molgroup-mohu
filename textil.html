@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" />
+    <link rel="stylesheet" href="style.css">
+    <title>MOHU P&G | Térkép - Textil</title>
+    <link rel="icon" type="image/x-icon" href="img/favicon.ico">
+</head>
+<body>
+    <div id="nav" class="navbar-green"></div>
+    <div class="main-container">
+        <aside id="info-panel">
+            <h1> Textil hulladékgyűjtő térkép</h1>
+            <div id="filter-panel">
+                <h1>Szűrők</h1>
+                <div class="filter-row">
+                    <span class="label">Kihelyezés dátuma:</span>
+                    <input type="date" id="start-date" class="date-input" />
+                    <input type="date" id="end-date" class="date-input" />
+                </div>
+                <div class="filter-row">
+                    <span class="label">Régió:</span>
+                    <select id="regio-filter" class="regio-select">
+                        <option value="">Összes régió</option>
+                        <option value="Budapest régió">Budapest régió</option>
+                        <option value="Dél-Dunántúl régió">Dél-Dunántúl régió</option>
+                        <option value="Észak-Dunántúl régió">Észak-Dunántúl régió</option>
+                        <option value="Észak-Kelet Magyarország régió">Észak-Kelet Magyarország régió</option>
+                        <option value="Közép-Kelet Magyarország régió">Közép-Kelet Magyarország régió</option>
+                        <option value="Tiszántúli régió">Tiszántúli régió</option>
+                    </select>
+                </div>
+                <div id="filter-varmegye"></div>
+                <div class="filter-row">
+                    <span class="label">Szervezet:</span>
+                    <select class="tipus-select" id="tipus-filter">
+                        <option value="">Összes</option>
+                        <option value="COOP">COOP</option>
+                        <option value="Hulladékudvar">Hulladékudvar</option>
+                        <option value="METRO">METRO</option>
+                        <option value="MOHU">MOHU</option>
+                        <option value="Önkormányzat">Önkormányzat</option>
+                        <option value="Reál">Reál</option>
+                        <option value="Tankerületek">Tankerületek</option>
+                        <option value="Tesco">Tesco</option>
+                    </select>
+                </div>
+                <div class="filter-btn-row">
+                    <button id="filter-mohu" class="filter-btn active">MOHU</button>
+                    <button id="filter-ex" class="filter-btn active">Textrade</button>
+                </div>
+            </div>
+            <div class="counters">
+                <div id="marker-counter">Gyűjtőhelyek száma: <span id="marker-count">0</span></div>
+                <div id="con-counter">Konténerek száma: <span id="con-count">0</span></div>
+            </div>
+            <div id="info-placeholder">
+                <p class="info-placeholder-katt">Kattints egy pontra a részletekért.</p>
+            </div>
+        </aside>
+        <div id="map"></div>
+    </div>
+    <script src="script/script.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+    <script src="https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js"></script>
+    <script src="script/script-textil.js"></script>
+</body>
+</html>
